@@ -85,3 +85,15 @@ img, svg {
     background-color: transparent;
     border: 0
 }
+
+.custom-dropdown {
+    position: relative;
+}
+
+.custom-dropdown .dropdown-menu {
+    top: 80%; /* Lennre helyezés */
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #e1e1e1; /* Hover stílus */
+}

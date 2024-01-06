@@ -11,28 +11,30 @@
                     <li class="list-inline-item px-3 border-start d-none d-lg-inline-block">Free shipping on orders over $300</li>
                 </ul>
             </div>
+            <!-- LANGUAGE DROPDOWN -->
             <div class="col-sm-5 d-flex justify-content-end">
-                <div class="dropdown border-end px-3">
-                    <a class="dropdown-toggle topbar-link" href="#">
-                        <img class="topbar-flag" src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/flag/gb.svg" alt="english">
-                        English
+                <div ngbDropdown class="custom-dropdown border-end px-3" (openChange)="dropdownOpened($event)">
+                    <a ngbDropdownToggle class="custom-dropdown-toggle topbar-link" >
+                        <img class="topbar-flag" [src]="activeCountry.src" [alt]="activeCountry.alt">
+                        {{ activeCountry.name }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
-                        <a href="" class="dropdown-item text-sm">
-                            <img src="https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/flag/de.svg" alt="german" class="topbar-flag">
+                    <div ngbDropdownMenu class="custom-dropdown-menu dropdown-menu-end dropdown-menu-animated">
+                        <a *ngFor="let language of languages" class="dropdown-item text-sm" (click)="setActiveCountry(language)">
+                            <img [src]="language.src" [alt]="language.alt" class="topbar-flag">
+                            {{ language.name }}
                         </a>
                     </div>
                 </div>
-                <div class="dropdown ps-3 ms-0">
-                    <a href="#" class="dropdown-toggle topbar-link">
-                        <i class="fas fa-dollar-sign text-xs align-middle mt-n1 me-2">USD</i>
+                <!-- CURRENCY DROPDOWN -->
+                <div ngbDropdown class="ps-3 ms-0 custom-dropdown" (openChange)="dropdownOpened($event)">
+                    <a ngbDropdownToggle class="dropdown-toggle topbar-link">
+                        <i [class]="'fas fa-euro-sign text-xs align-middle mt-n1 me-2'"></i>
+                        {{activeCurrency.name}}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
-                        <a href="#" class="dropdown-item text-sm">
-                            <i class="fas fa-euro-sign text-xs align-middle mt-n1 me-2">EUR</i>
-                        </a>
-                        <a href="#" class="dropdown-item text-sm">
-                            <i class="fas fa-pound-sign text-xs align-middle mt-n1 me-2">GBP</i>
+                    <div ngbDropdownMenu class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
+                        <a *ngFor="let currency of currencies" ngbDropdownItem class="dropdown-item text-sm" (click)="setActiveCurrency(currency)">
+                            <i class="fas fa-euro-sign text-xs align-middle mt-n1 me-2"></i>
+                            {{currency.name}}
                         </a>
                     </div>
                 </div>
