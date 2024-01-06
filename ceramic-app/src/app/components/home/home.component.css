@@ -1,0 +1,17 @@
+.circle-slider-bg {
+    background: url('https://d19m59y37dris4.cloudfront.net/sell/2-0-1/img/slider/circle-slider-1.jpg')
+    right bottom no-repeat;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-size: contain !important
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 20;
+}
+
+.letter-spacing-5 {
+    letter-spacing: 0.5em;
+}
