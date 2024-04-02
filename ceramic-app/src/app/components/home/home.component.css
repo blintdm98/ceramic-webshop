@@ -15,3 +15,7 @@
 .letter-spacing-5 {
     letter-spacing: 0.5em;
 }
+
+.carousel-item {
+    height: 100vh;
+}
