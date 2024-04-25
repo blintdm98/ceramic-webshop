@@ -1,1 +1,22 @@
 <p>product-list works!</p>
+
+<div class="container p-3 text-center">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of (product | async), index as i">
+                    <td> {{i + 1}} </td>
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+           

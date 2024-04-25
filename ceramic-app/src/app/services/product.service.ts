@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection } from '@angular/fire/firestore';
+import { Firestore, collection, getDocs } from '@angular/fire/firestore';
+import { Observable, from, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ProductModel } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,17 @@ export class ProductService {
     console.log(`Firebase appip: ${environment.firebaseConfig.appId}`);
   }
 
-  //*READ ONE
-  // getCustomerWithGetDoc(id: string) {
-  //   const productDoc = doc(this.firestore, ``)
-  // }
+  //*READ ALL
+  getAllProduct(): Observable<ProductModel[]> {
+    return from(getDocs(this.productCollectionRef)).pipe(
+      map((snapshot) => {
+        const resultList = snapshot.docs.map((doc) => {
+          const productData: ProductModel = doc.data() as ProductModel;
+          productData.id = doc.id;
+          return productData;
+        });
+        return resultList;
+      })
+    )
+  }
 }
