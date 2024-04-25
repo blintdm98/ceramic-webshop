@@ -6,10 +6,20 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { ProductComponent } from './components/product/product.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    HeaderComponent,
+    FooterComponent,
+    SliderComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
