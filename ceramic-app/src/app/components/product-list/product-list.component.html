@@ -10,10 +10,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of (product | async), index as i">
-                    <td> {{i + 1}} </td>
-                    <td>{{product.id}}</td>
-                    <td>{{product.name}}</td>
+                <tr *ngFor="let product of (products | async), index as i">
+                    <td (click)="goToProduct(product.id)"> {{i + 1}} </td>
+                    <td (click)="goToProduct(product.id)">{{product.id}}</td>
+                    <td (click)="goToProduct(product.id)">{{product.name}}</td>
                 </tr>
             </tbody>
         </table>
