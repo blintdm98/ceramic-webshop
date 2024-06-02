@@ -2,3 +2,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.link-hover-effect::after {
+    content: '';
+    display: block;
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.7s ease-in-out;
+  }
+  
+  .link-hover-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
