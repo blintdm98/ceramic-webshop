@@ -14,6 +14,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ContactComponent } from './components/contact/contact.component';
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp( environment.firebaseConfig )),
     provideFirestore(() => getFirestore()),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
