@@ -2,21 +2,25 @@
     <nav 
         class="container mx-auto md:flex
          md:flex-row md:flex-nowrap">
-        <div class="h-20 flex-1 md:self-center" routerLink="/">
+        <div class="h-20 flex-1 md:self-center" 
+            routerLink="/">
             <!-- <img class="h-16" src="" alt=""> -->
             Logo
         </div>
         <ul class="hidden md:flex md:flex-row md:flex-nowrap">
-            <li class="py-1 md:py-6 px-4 cursor-pointer " routerLink="product-list">
+            <li class="py-1 md:py-6 px-4 cursor-pointer" 
+                routerLink="product-list">
                 <a class="relative text-white cursor-pointer
                 link-hover-effect">Products</a>
             </li>
-            <li class="py-1 md:py-6 px-4 cursor-pointer" routerLink="contact">
+            <li class="py-1 md:py-6 px-4 cursor-pointer" 
+                routerLink="contact">
                 <a class="relative text-white cursor-pointer
                 link-hover-effect">Contact</a>
             </li>
             <li class = "py-1 md:py-6 px-5">
-                <i class="fa-solid fa-cart-shopping cursor-pointer hover:ping-cart hover:bg-emerald-800 p-2 rounded-2xl" routerLink="cart"></i>
+                <i class="fa-solid fa-cart-shopping cursor-pointer hover:ping-cart hover:bg-emerald-800 p-2 rounded-2xl"
+                (click)="openCart()"></i>
             </li>
         </ul>
     </nav>

@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartOverlayComponent } from './components/cart-overlay/cart-overlay.component';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductListComponent,
     HomeComponent,
     CartComponent,
-    ContactComponent
+    ContactComponent,
+    CartOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     provideFirestore(() => getFirestore()),
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
